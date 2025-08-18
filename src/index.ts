@@ -1,7 +1,15 @@
 import { Elysia } from "elysia";
 
-const app = new Elysia().get("/", () => "Hello Elysia").listen(3000);
+let cont = 0;
 
-console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
-);
+const app = new Elysia()
+  .get("/pong", async () => {
+    fetch("http://192.168.209.154:8000/ping", { method: "GET" });
+
+    cont++;
+    console.log(`Pongou! ${cont}`);
+    return `Pongou! ${cont}`;
+  })
+  .listen(3000);
+
+console.log(`Pongou na porta ${app.server?.hostname}:${app.server?.port}`);
