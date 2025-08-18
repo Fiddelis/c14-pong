@@ -1,14 +1,17 @@
 import { Elysia } from "elysia";
 
-let cont = 0;
+let count = 0;
 
 const app = new Elysia()
   .get("/pong", async () => {
-    fetch("http://192.168.209.154:8000/ping", { method: "GET" });
+    fetch("http://192.168.209.219:8000/ping", { method: "GET" });
 
-    cont++;
-    console.log(`Pongou! ${cont}`);
-    return `Pongou! ${cont}`;
+    count++;
+    console.log(`Pongou! ${count}`);
+    return `Pongou! ${count}`;
+  })
+  .get("/pong/count", async () => {
+    return count;
   })
   .listen(3000);
 
