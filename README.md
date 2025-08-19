@@ -41,3 +41,6 @@ bun build --compile --minify-whitespace --minify-syntax --target bun --outfile s
 # Run executable
 ./server
 ```
+
+## Conflict Resolution
+The merge conflict was resolved via GitHub.
