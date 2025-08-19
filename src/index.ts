@@ -7,7 +7,7 @@ const app = new Elysia()
     fetch("http://192.168.209.219:8000/ping", { method: "GET" });
 
     count++;
-    console.log(`Pongou!!!! ${count}`);
+    console.log(`Foi pongado! ${count}`);
     return `Pongou! ${count}`;
   })
   .get("/pong/count", async () => {
